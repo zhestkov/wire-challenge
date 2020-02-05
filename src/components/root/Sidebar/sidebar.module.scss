@@ -1,0 +1,38 @@
+@import "../../../assets/styles/base/all";
+@import "~bulma/sass/utilities/_all.sass";
+
+$sidebar-width: 280px;
+
+.sidebar {
+  flex: 0 0 $sidebar-width;
+  display: flex;
+  flex-direction: column;
+  background-color: $blue-10;
+
+  .link {
+    padding: 8px 14px;
+    border: 2px solid $blue-10;
+    border-radius: 4px;
+    text-decoration: none;
+    color: $blue-70;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+
+    &.isActiveLink {
+      background-color: $blue-80;
+      color: $white;
+    }
+
+    &:first-child {
+      margin-top: 40px;
+    }
+
+    &:hover:not(.isActiveLink) {
+      color: $white;
+      background-color: $blue-50;
+    }
+  }
+
+
+}

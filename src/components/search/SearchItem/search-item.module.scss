@@ -1,0 +1,29 @@
+@import "../../../assets/styles/base/all";
+
+.searchItem {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px 4px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $black-60;
+  }
+
+  .metaInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 0 600px;
+  }
+
+  .owner {
+    border: 1px solid red;
+    flex: 0 1 20%;
+  }
+
+  .stars {
+    border: 1px solid green;
+    flex: 0 1 20%;
+  }
+}

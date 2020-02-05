@@ -1,4 +1,6 @@
 import * as React from 'react'
+import cn from 'classnames';
+import styles from './header.module.scss';
 
 interface IHeaderProps {
   title: string;
@@ -14,6 +16,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
   };
 
   render() {
-    return <div>My Header</div>;
+    // const classNames = cn(styles.header);
+    return <div className={styles.header}>Wire Challenge</div>;
   }
 }

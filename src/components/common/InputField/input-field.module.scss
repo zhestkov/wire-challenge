@@ -1,0 +1,33 @@
+@import '~bulma/sass/utilities/_all';
+@import '~bulma/sass/base/_all';
+@import "~bulma/sass/form/all";
+@import "../../../assets/styles/base/all";
+
+$placeholder-color: $blue-50;
+$input-padding: $building-unit_x2 $building-unit-x4 $building-unit-x2 $building-unit-x2;
+$input-height: 2.85em;
+
+.control {
+  .input {
+    padding: $input-padding;
+    height: $input-height;
+    color: $text-primary-color;
+
+    &:hover,
+    &:focus,
+    &.is-focused,
+    &:active {
+      background-color: $white;
+    }
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+
+    &:focus.error,
+    &.is-focused.error {
+      box-shadow: 0 0 0 3px $red-40;
+      border: 1px solid $red;
+    }
+  }
+}

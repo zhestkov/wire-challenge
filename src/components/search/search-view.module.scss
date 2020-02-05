@@ -1,0 +1,33 @@
+@import "../../assets/styles/base/all";
+
+$input-search-max-width: 400px;
+
+.searchView {
+  background-color: $blue-03;
+  flex-grow: 1;
+  align-items: center;
+
+  .inputField {
+    margin: 40px auto 0 auto;
+    max-width: $input-search-max-width;
+  }
+
+  .resultsHeader {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    width: 100%;
+
+    .packageName {
+      flex: 0 0 600px;
+
+    }
+    .packageOwner {
+      flex: 0 1 20%;
+    }
+
+    .packageStars {
+      flex: 0 1 20%;
+    }
+  }
+}

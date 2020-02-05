@@ -1,0 +1,16 @@
+@import "../../../assets/styles/base/all";
+
+$header-height: 100px;
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: $blue-80;
+  color: $white;
+  font-weight: $font-weight-bold;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: .01em;
+}
