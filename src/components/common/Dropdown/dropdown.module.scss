@@ -1,0 +1,170 @@
+//@import '~bulma/sass/utilities/_all';
+//@import '~bulma/sass/base/_all';
+//@import '~bulma/sass/elements/tag';
+//@import '~bulma/sass/elements/box';
+//@import '~bulma/sass/elements/icon';
+//@import '~bulma/sass/elements/container';
+//@import '~bulma/sass/elements/button';
+//@import '~bulma/sass/components/dropdown';
+//@import "~bulma/sass/form/all";
+@import "../../../assets/styles/base/all";
+
+$dropdown-content-radius: 8px;
+$dropdown-content-offset: 4px;
+$dropdown-content-shadow: 0px 2px 4px $blue-10;
+$dropdown-item-active-background-color: $blue;
+$dropdown-item-color: $black-90;
+$dropdown-content-padding-top: 0;
+$dropdown-content-padding-bottom: 0;
+
+
+$dropdown-trigger-bg-color: $blue-80;
+$dropdown-hover-trigger-bg-color: $white;
+$dropdown-hover-item-bg-color: $blue-20;
+$dropdown-items-container-border: 1px solid $blue-20;
+$dropdown-active-item-bg-color: $blue;
+$dropdown-active-item-text-color: $white;
+
+.dropdown {
+  color: $white;
+  width: 100%;
+  height: 2.5em;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &.isActive {
+    .dropdownContent {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-radius: $dropdown-content-radius;
+    }
+  }
+
+  .dropdownTrigger {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: $building-unit-x2;
+    background-color: $dropdown-trigger-bg-color;
+    justify-content: flex-start;
+    border-radius: $dropdown-content-radius;
+    border-color: transparent;
+    box-sizing: border-box;
+    white-space: nowrap;
+
+    &:hover,
+    &:active,
+    &.active {
+    border: $dropdown-items-container-border;
+    background-color: $blue;
+    box-shadow: $dropdown-content-shadow;
+  }
+
+    .arrowIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      transition: 0.3s;
+
+      svg path {
+        fill: $white;
+      }
+
+      &.iconRotated {
+        transform: rotate(180deg) translateY(-8%);
+      }
+    }
+
+    /*&:hover,
+    &:active,
+    &.active {
+      border: $dropdown-items-container-border;
+      background-color: $dropdown-hover-trigger-bg-color;
+      box-shadow: $dropdown-content-shadow;
+
+      .icon {
+        svg path {
+          fill: $blue;
+        }
+      }
+    }*/
+  }
+
+  .dropdownContent {
+    position: absolute;
+    display: none;
+    padding-top: $building-unit;
+    border-radius: $dropdown-content-radius;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px $blue-10;
+    z-index: 1;
+
+    .menuItem {
+      padding: $building-unit-x2;
+      background-color: $blue-80;
+      color: $white;
+
+      &:hover {
+        background-color: $blue;
+      }
+
+      &:first-child {
+        border-top-left-radius: $dropdown-content-radius - 2px;
+        border-top-right-radius: $dropdown-content-radius - 2px;
+        &:hover {
+          border-top-left-radius: $dropdown-content-radius - 2px;
+          border-top-right-radius: $dropdown-content-radius - 2px;
+        }
+
+        &.is-active {
+          border-radius: 1px;
+          &:after {
+            content: '';
+            border: 1px solid $blue;
+            border-top-left-radius: $dropdown-content-radius;
+            border-top-right-radius: $dropdown-content-radius;
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            top: -1px;
+            bottom: 0;
+          }
+        }
+      }
+
+      &:last-child {
+        border-bottom-left-radius: $dropdown-content-radius - 2px;
+        border-bottom-right-radius: $dropdown-content-radius - 2px;
+        &:hover {
+          border-bottom-left-radius: $dropdown-content-radius - 2px;
+          border-bottom-right-radius: $dropdown-content-radius - 2px;
+        }
+
+        &.is-active {
+          border-radius: 1px;
+          &:after {
+            content: '';
+            border: 1px solid $blue;
+            border-bottom-left-radius: $dropdown-content-radius;
+            border-bottom-right-radius: $dropdown-content-radius;
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            top: 0;
+            bottom: -1px;
+          }
+        }
+      }
+
+
+
+      &.isActive {
+        background-color: $dropdown-active-item-bg-color;
+        color: $white;
+      }
+    }
+  }
+}

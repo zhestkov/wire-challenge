@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { connect, ConnectedProps } from 'react-redux';
+import { Dispatch } from 'redux';
+import SearchItem from './SearchItem/SearchItem';
+import InputField from '../common/InputField/InputField';
+import Pagination from '../common/Pagination/Pagination';
+import Dropdown, { IDropdownItem } from '../common/Dropdown/Dropdown';
 import { IPackage } from '../../shared/interfaces/IPackage';
 import { TRootState } from '../../store/modules';
 import { fetchPackages, ISearchActionTypes, ISearchFilter } from '../../store/modules/search';
-import { Dispatch } from 'redux';
-import SearchItem from './SearchItem/SearchItem';
-import { InputField } from '../common/InputField/InputField';
 import Util from '../../shared/utils/Util';
 import styles from './search-view.module.scss';
 
@@ -28,7 +30,23 @@ type TSearchViewProps = PropsFromRedux & {
 type TSearchViewState = {
   searchValue: string;
   filter?: ISearchFilter;
+  selectedSortItem: IDropdownItem | null;
 }
+
+const SORT_ITEMS = [
+  {
+    value: 'owner',
+    label: 'Owner'
+  },
+  {
+    value: 'stars',
+    label: 'Stars'
+  },
+  {
+    value: 'name',
+    label: 'Package name'
+  }
+  ] as IDropdownItem[];
 
 export class SearchView extends React.Component<TSearchViewProps, TSearchViewState> {
   private onSearchQueryChangeThrottled: (context: any, ...args: any[]) => void;
@@ -38,7 +56,8 @@ export class SearchView extends React.Component<TSearchViewProps, TSearchViewSta
     this.onSearchQueryChangeThrottled = Util.throttle(this.onSearchQueryChange.bind(this), 100, this);
   }
   state = {
-    searchValue: ''
+    searchValue: '',
+    selectedSortItem: null
   };
 
   componentDidMount(): void {
@@ -57,18 +76,28 @@ export class SearchView extends React.Component<TSearchViewProps, TSearchViewSta
     });
   };
 
+  onSelectSortItem = (item: IDropdownItem) => this.setState({ selectedSortItem: item });
+
 
   render() {
-    const { searchValue } = this.state;
+    const { searchValue, selectedSortItem } = this.state;
     const { packages } = this.props;
     return (
       <div className={styles.searchView}>
-        <InputField
-          className={styles.inputField}
-          value={searchValue}
-          placeholder={'Search package'}
-          onChange={this.onSearchQueryChange}
-        />
+        <div className={styles.searchControls}>
+          <InputField
+            className={styles.inputField}
+            value={searchValue}
+            placeholder={'Search package'}
+            onChange={this.onSearchQueryChange}
+          />
+          <Dropdown
+            className={styles.dropdownWrapper}
+            items={SORT_ITEMS}
+            selected={selectedSortItem}
+            defaultPlaceholder={'Select sort option'}
+            onSelect={this.onSelectSortItem} />
+        </div>
         <div className={styles.resultsHeader}>
           <div className={styles.packageName}>Name</div>
           <div className={styles.packageOwner}>Owner</div>
@@ -77,6 +106,7 @@ export class SearchView extends React.Component<TSearchViewProps, TSearchViewSta
         {packages.map((pkg: IPackage, idx: number) =>
             <SearchItem key={idx} pkg={pkg} />)
         }
+        <Pagination className={styles.paginationWrapper} />
       </div>
     );
   }

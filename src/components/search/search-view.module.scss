@@ -1,15 +1,36 @@
 @import "../../assets/styles/base/all";
+@import "../../assets/styles/responsive";;
 
 $input-search-max-width: 400px;
+$search-filters-max-width: 240px;
 
 .searchView {
   background-color: $blue-03;
   flex-grow: 1;
   align-items: center;
 
-  .inputField {
-    margin: 40px auto 0 auto;
-    max-width: $input-search-max-width;
+  .searchControls {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: $building-unit-x8 0 $building-unit-x6 $building-unit-x6;
+
+    .inputField {
+      max-width: $input-search-max-width;
+      margin-right: $building-unit-x8;
+    }
+
+    @media ($tablet-mq) {
+      flex-direction: column;
+
+      .inputField {
+        margin: 0 0 $building-unit-x4 0;
+      }
+    }
+
+    .dropdownWrapper {
+      max-width: $search-filters-max-width;
+    }
   }
 
   .resultsHeader {
@@ -29,5 +50,10 @@ $input-search-max-width: 400px;
     .packageStars {
       flex: 0 1 20%;
     }
+  }
+
+  .paginationWrapper {
+    margin-top: $building-unit-x4;
+    padding-bottom: $building-unit-x4;
   }
 }

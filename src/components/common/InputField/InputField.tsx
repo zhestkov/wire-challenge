@@ -14,7 +14,7 @@ type TInputFieldProps = {
   onBlur?: () => void;
 }
 
-export class InputField extends React.Component<TInputFieldProps> {
+export default class InputField extends React.Component<TInputFieldProps> {
   private inputRef: React.RefObject<HTMLInputElement>;
 
   constructor(props: TInputFieldProps) {
