@@ -3,7 +3,7 @@ export const SET_LOADING = 'SET_LOADING';
 
 // action interfaces
 
-interface ISetLoadingAction {
+export interface ISetLoadingAction {
   type: typeof SET_LOADING;
   payload: boolean;
 }

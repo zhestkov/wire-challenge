@@ -1,8 +1,15 @@
 import axios, { AxiosResponse } from 'axios';
-import { IPackage } from '../../shared/interfaces/IPackage';
-import { IPagination } from '../../shared/interfaces/IPagination';
+import { IPackage } from '../../../shared/interfaces/IPackage';
+import { IPagination } from '../../../shared/interfaces/IPagination';
 import { Dispatch } from 'redux';
+import {TRootState} from '../index';
+import {ISetLoadingAction, setLoading} from '../loading';
+import { SORT_ITEMS } from '../../../shared/interfaces/ISort';
 
+// Attention!
+// Libraries.io doesn't provide a proper Access-Control-Expose-Headers header
+// So it's impossible to get value of  *total* header
+const TOTAL_PAGES = 12;
 const PACKAGES_PER_PAGE = 5;
 
 export interface ISearchFilter extends IPagination {
@@ -13,7 +20,7 @@ export interface ISearchFilter extends IPagination {
 export interface ISearchState {
   packages: IPackage[];
   filter: ISearchFilter;
-  error: Error | null ;
+  error: Error | null;
 }
 
 // action types
@@ -40,15 +47,12 @@ interface ISetErrorAction {
   payload: Error;
 }
 
-export type ISearchActionTypes = ISetPackagesAction | ISetFilterAction | ISetErrorAction;
+export type ISearchActionTypes = ISetPackagesAction | ISetFilterAction | ISetErrorAction | ISetLoadingAction;
 
 // action creators
 export const setPackages = (packages: IPackage[]): ISearchActionTypes => ({
   type: SET_PACKAGES,
-  payload: packages,
-  // meta: {
-  //   throttle: 3000
-  // }
+  payload: packages
 });
 
 export const setFilter = (filter: ISearchFilter): ISearchActionTypes => ({
@@ -61,46 +65,55 @@ export const setError = (err: Error): ISearchActionTypes => ({
   payload: err
 });
 
-// TODO: sort packages + pagination
-// TODO: FILTER ACTION ?
-// TODO: fetchPackage again on
-// export const sortPackages = () => {};
-
-export const  fetchPackages = ({ query, limit = PACKAGES_PER_PAGE, offset }: ISearchFilter): any => async (dispatch: Dispatch<ISearchActionTypes>) => {
-  const PAGE_NUMBER  = Math.floor(offset / limit);
+// TODO: add throttling
+export const  fetchPackages =
+  ({ query, limit = PACKAGES_PER_PAGE, offset, page, sortField, total = TOTAL_PAGES}: ISearchFilter): any =>
+    async (dispatch: Dispatch<ISearchActionTypes>, getState: () => TRootState) => {
+  const PAGE_NUMBER  = offset
+    ? Math.floor(offset / limit)
+    : page ? page : 1;
   try {
-    console.log(process.env);
+    dispatch(setLoading(true));
     const res: AxiosResponse = await axios.get<IPackage>(`${process.env.REACT_APP_BASE_API_URI}/bower-search`, {
       params: {
         q: query,
         per_page: limit,
         page: PAGE_NUMBER,
+        ...(getState().search.filter.sortField === SORT_ITEMS.stars.value
+          && { sort: getState().search.filter.sortField }),
         api_key: process.env.REACT_APP_API_KEY
       }
     });
-    dispatch({
-      type: SET_PACKAGES,
-      payload: res.data
-    });
+
+    dispatch((setFilter({
+      ...getState().search.filter,
+      query,
+      limit,
+      total,
+      ...(offset && { offset }),
+      ...(page && { page }),
+      ...(sortField && { sortField }),
+    })));
+
+    dispatch(setPackages(res.data));
+    dispatch(setLoading(false));
+
+    console.log(getState().search);
   } catch(err) {
     console.error(err);
-    dispatch({
-      type: SET_ERROR,
-      payload: err
-    });
+    dispatch(setError(err));
   }
 };
-
-// export const fetchPackagesThrottled = (filter: ISearchFilter) => Util.throttle(fetchPackages, 3000, null);
 
 const initialState: ISearchState = {
   packages: [],
   filter: {
     query: '',
-    // sortField: '',
-    // sortOrder: 'asc',
+    sortField: '',
     offset: 0,
-    limit: PACKAGES_PER_PAGE
+    limit: PACKAGES_PER_PAGE,
+    page: 1,
+    total: 12
   },
   error: null
 };

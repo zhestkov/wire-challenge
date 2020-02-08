@@ -3,13 +3,9 @@
  @import '../../../assets/styles/base/all';
 
 .appContainer {
-  //display: grid;
-  //grid-template-columns: $sidebar-width auto;
-  //grid-template-rows: $header-height auto $footer-height;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  // background-color: rgb(255, 255, 255);
 
 
   main {
@@ -20,6 +16,7 @@
     .main-content {
       width: 100%;
       height: 100%;
+      overflow-y: scroll;
     }
   }
 }

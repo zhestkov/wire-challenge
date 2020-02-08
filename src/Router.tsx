@@ -4,8 +4,7 @@ import HomeView from './components/home/HomeView';
 
 export enum RoutesEnum {
   HOME_PAGE = 'HomePage',
-  SEARCH_PAGE = 'SearchPage',
-  PACKAGE_INFO_PAGE = 'PackageInfoPage'
+  SEARCH_PAGE = 'SearchPage'
 }
 
 export interface IRoute {
@@ -29,15 +28,7 @@ const Routes: IRoute[] = [
     path: '/search',
     name: RoutesEnum.SEARCH_PAGE,
     label: 'Search packages',
-    component: SearchView,
-    // routes: [
-    //   {
-    //     path: '/search/:package',
-    //     name: RoutesEnum.PACKAGE_INFO_PAGE,
-    //     label: 'Package Info',
-    //     component: HomeView // TODO
-    //   }
-    // ]
+    component: SearchView
   },
 ];
 export default Routes;

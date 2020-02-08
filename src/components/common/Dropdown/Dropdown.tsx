@@ -99,13 +99,6 @@ export default class Dropdown extends React.Component<TDropdownProps, TDropdownS
             </div>
           ))}
         </div>
-        {/*<div*/}
-        {/*  role='menu'*/}
-        {/*  className={cn(styles.dropdownMenu)}*/}
-        {/*  onClick={this.closeDropdown}>*/}
-        {/*  */}
-        {/*</div>*/}
-
       </div>
     )
   }

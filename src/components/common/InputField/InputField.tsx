@@ -40,9 +40,8 @@ export default class InputField extends React.Component<TInputFieldProps> {
       onBlur
     } = this.props;
 
-    const classNames = cn(styles.control, className)
     return (
-      <div className={classNames}>
+      <div className={cn(styles.control, className)}>
         <input
           ref={this.inputRef}
           className={cn(

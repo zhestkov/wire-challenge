@@ -4,51 +4,43 @@
 $white: #FFFFFF;
 
 $black: #000000;
-$black-90: #1A1A1A; // typography primary
-$black-60: #666666; // typography secondary (grey)
-$black-40: #999999; // status
+$black-90: #1A1A1A;
+$black-60: #666666;
+$black-40: #999999;
 
-$blue: #0E3053; // nav bar, Icons
-$blue-80: #3E5975; // links
-$blue-70: #566E87; // button:normal
-$blue-50: #8697A9; // input placeholder
-$blue-40: #9FACBA; // footer
-$blue-30: #B7C1CB; // checkbox:hover
-$blue-20: #CFD6DD; // alert background, loader image
-$blue-10: #E7EAEE; // skeleton loader, input background
-$blue-03: #F8F9FA; // page background, subheading background
+$blue: #0E3053;
+$blue-80: #3E5975;
+$blue-70: #566E87;
+$blue-50: #8697A9;
+$blue-40: #9FACBA;
+$blue-30: #B7C1CB;
+$blue-20: #CFD6DD;
+$blue-10: #E7EAEE;
+$blue-03: #F8F9FA;
 
-$mintgreen: #5DBFAC; // nav bar
-$mintgreen-90: #6DC5B4; // button:normal
-$mintgreen-20: #DFF2EE; // button:disabled
+$mintgreen: #5DBFAC;
+$mintgreen-90: #6DC5B4;
+$mintgreen-20: #DFF2EE;
 
 $lilac: #8C9CCD;
-$lilac-90: #97A6D2; // button:normal
+$lilac-90: #97A6D2;
 $lilac-80: #A3B0D7;
 $lilac-30: #DDE1F0;
-$lilac-20: #E8EBF5; // button:disabled
+$lilac-20: #E8EBF5;
 
 $cyan: #2598C7;
 $cyan-90: #3BA2CD;
-$cyan-40: #A8D6E9; // border on button:hover
+$cyan-40: #A8D6E9;
 
 $red: #D03C45;
-$red-80: #D9636A; // Error bubble
+$red-80: #D9636A;
 $red-40: #ECB1B5;
 
 $yellow: #FF9F07;
 
 $green: #00A947;
 
-// Statuses
-$status-success: $green;
-$status-warning: $yellow;
-$status-danger: $red;
-$status-info: $cyan-90;
-$status-light: $blue-10;
-$status-default: $black-40;
-
-// [Containers]
+// Containers
 $container-desktop: 960px !default;
 $container-widescreen: 1152px !default;
 $container-fullhd: 1440px !default;
@@ -68,14 +60,6 @@ $border-radius-regular: $border-radius-tiny * 6; // 24px
 $border-radius-medium: $border-radius-tiny * 8; // 32 px
 $border-radius-large: $border-radius-tiny * 12; // 48 px
 
-// Paddings & margins
-$whitespace-regular: $building-unit-x4; // 16px
-$whitespace-tiny: $whitespace-regular * 0.25; // 4px
-$whitespace-mini: $whitespace-regular * 0.5; // 8px
-$whitespace-small: $whitespace-regular * 0.75; // 12px
-$whitespace-medium: $whitespace-regular * 1.25; // 20px
-$whitespace-jumbo: $whitespace-regular * 7.5; // 120 px
-
 $grid-margin: $building-unit * 2.5 !default; // 10px
 
 // [Typography]
@@ -83,52 +67,9 @@ $grid-margin: $building-unit * 2.5 !default; // 10px
 $text-primary-color: $black-90 !default;
 $text-secondary-color: $black-60 !default;
 
-// font-sizes
-$size-1: 32px;
-$size-2: 24px;
-$size-3: 18px;
-$size-4: 16px;
-$size-5: 14px;
-$size-6: 12px;
-$size-7: 14px;
-$base-font-size: $size-4;
-
-// line-heights
-$lh-1: 48px;
-$lh-2: 28px;
-$lh-3: 28px;
-$lh-4: 24px;
-$lh-5: 20px;
-$lh-6: 20px;
-$lh-7: 16px;
-$base-line-height: $lh-4;
-
 // font-weights
 $font-weight-thin: 100;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 600;
 $font-weight-ultra: 900;
-
-// Input
-$input-bg-color: $blue-10;
-$input-active-bg-color: $white;
-$input-focus-shadow-size: 0px 0px 0px 3px;
-$input-focus-shadow-color: $cyan-40;
-$input-active-border-color: $blue;
-$input-active-border-width: 1px;
-$input-active-text-color: $text-primary-color;
-$input-disabled-clr: $blue-40;
-$input-radii: 4px;
-
-// Backgrounds
-$app-background-color: $blue-03 !default;
-$subheading-background: $app-background-color !default;
-$bubble-background-info: $black-40; // TODO: Move to component's own styles
-$bubble-background-warning: $red-80;
-
-// TODO: Transition
-$transition-default: .2s !default;
-
-// Shadows
-$app-box-shadow: 0px 1px 4px rgba(125, 120, 120, 0.2) !default;

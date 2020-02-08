@@ -1,9 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './modules';
-// import throttledMiddleware from './middlewares/throttle';
-
-// TODO: think about conntected-react-router middleware
 
 const middlewares = [thunk];
 const enhancers = [];

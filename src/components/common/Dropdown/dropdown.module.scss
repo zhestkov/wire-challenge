@@ -1,12 +1,3 @@
-//@import '~bulma/sass/utilities/_all';
-//@import '~bulma/sass/base/_all';
-//@import '~bulma/sass/elements/tag';
-//@import '~bulma/sass/elements/box';
-//@import '~bulma/sass/elements/icon';
-//@import '~bulma/sass/elements/container';
-//@import '~bulma/sass/elements/button';
-//@import '~bulma/sass/components/dropdown';
-//@import "~bulma/sass/form/all";
 @import "../../../assets/styles/base/all";
 
 $dropdown-content-radius: 8px;
@@ -53,13 +44,18 @@ $dropdown-active-item-text-color: $white;
     border-color: transparent;
     box-sizing: border-box;
     white-space: nowrap;
+    font-size: 14px;
+    line-height: 20px;
+    color: $white;
 
     &:hover,
     &:active,
+    &:focus,
     &.active {
-    border: $dropdown-items-container-border;
-    background-color: $blue;
-    box-shadow: $dropdown-content-shadow;
+      outline: none;
+      border: $dropdown-items-container-border;
+      background-color: $blue;
+      box-shadow: $dropdown-content-shadow;
   }
 
     .arrowIcon {

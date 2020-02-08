@@ -1,3 +1,57 @@
-.pagination {
+@import "../../../assets/styles/base/all";
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+  .paginationItem {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &.paginationNumber {
+      height: $building-unit-x8;
+      width: $building-unit-x8;
+      border-radius: 50%;
+      color: $blue-70;
+      font-weight: $font-weight-bold;
+
+      &:hover,
+      &.isSelected {
+        background-color: $blue;
+        color: $blue-03;
+        box-shadow: 0 1px 4px rgba(14, 48, 83, 0.2);
+      }
+    }
+
+    &.isDisabled {
+      opacity: .5;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &.arrowLeftIcon {
+      transform: rotate(90deg);
+
+      &:hover {
+        svg path {
+          fill: $blue;
+        }
+      }
+    }
+
+    &.arrowRightIcon {
+      transform: rotate(-90deg);
+
+      &:hover {
+        svg path {
+          fill: $blue;
+        }
+      }
+    }
+  }
 }

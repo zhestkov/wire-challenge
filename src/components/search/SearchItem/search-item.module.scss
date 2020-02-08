@@ -1,4 +1,6 @@
 @import "../../../assets/styles/base/all";
+@import "../../../assets/styles/responsive";
+@import "../variables";
 
 .searchItem {
   display: flex;
@@ -6,24 +8,63 @@
   padding: 10px 4px;
 
   &:not(:last-child) {
-    border-bottom: 1px solid $black-60;
+    border-bottom: 1px solid $blue-10;
   }
 
   .metaInfo {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    flex: 0 0 600px;
+    align-items: flex-start;
+    flex: 0 0 $package-meta-info-width;
+
+    .packageName {
+       font-size: 18px;
+       line-height: 28px;
+      font-weight: $font-weight-bold;
+    }
+
+    .packageDescription {
+      color: $blue-50;
+    }
   }
 
   .owner {
-    border: 1px solid red;
-    flex: 0 1 20%;
+    flex: 0 1 $package-owner-width;
+    font-weight: $font-weight-medium;
+    letter-spacing: .05em;
+
+    .ownerTitle {
+      display: none;
+
+      @media ($tablet-mq) {
+        display: inline;
+      }
+    }
   }
 
   .stars {
-    border: 1px solid green;
-    flex: 0 1 20%;
+    color: $red-80;
+    flex: 0 1 $package-stars-width;
+    font-weight: $font-weight-bold;
+
+    .starsTitle {
+      display: none;
+
+      @media ($tablet-mq) {
+        display: inline;
+      }
+    }
+  }
+
+  @media ($tablet-mq) {
+    flex-direction: column;
+
+    .metaInfo {
+      flex-basis: auto;
+    }
+  }
+
+  @media ($mobile-mq) {
+    font-size: 0.9em;
   }
 }

@@ -1,13 +1,18 @@
 @import "../../../assets/styles/base/all";
+@import "../../../assets/styles/responsive";
 @import "~bulma/sass/utilities/_all.sass";
 
-$sidebar-width: 280px;
+$sidebar-width: 220px;
 
 .sidebar {
   flex: 0 0 $sidebar-width;
   display: flex;
   flex-direction: column;
   background-color: $blue-10;
+
+  @media ($tablet-hq) {
+    display: none;
+  }
 
   .link {
     padding: 8px 14px;

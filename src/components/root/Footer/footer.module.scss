@@ -1,0 +1,16 @@
+@import "../../../assets/styles/base/all";
+
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: $blue;
+
+  .footerLabel {
+    padding: $building-unit-x2 $building-unit-x6;
+    margin-left: auto;
+    color: $white;
+    font-size: 14px;
+  }
+}

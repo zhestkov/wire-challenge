@@ -8,22 +8,28 @@ interface ISearchItemProps {
 }
 
 // TODO: move to utils?
-const REGEXP_OWNER = '(?<=github.com\\/).*\\/';
+const REGEXP_OWNER = /(?<=github.com\/).*\//;
 
-export default function SearchItem({ children, pkg }: ISearchItemProps) {
-  let owner = pkg.repository_url.match(/(?<=github.com\/).*\//)![0];
+export default function SearchItem({ pkg }: ISearchItemProps) {
+  let owner = pkg.repository_url.match(REGEXP_OWNER)![0];
   if (owner) {
     owner = owner.slice(0, -1);
   }
   return (
     <div className={styles.searchItem}>
       <div className={styles.metaInfo}>
-        <div>{pkg.name}</div>
-        <div>{pkg.homepage}</div>
-        <div>{pkg.description}</div>
+        <div className={styles.packageName}>{pkg.name}</div>
+        <a href={pkg.homepage}>{pkg.homepage}</a>
+        <div className={styles.packageDescription}>{pkg.description}</div>
       </div>
-      <div className={styles.owner}>{owner}</div>
-      <div className={styles.stars}>{pkg.stars}</div>
+      <div className={styles.owner}>
+        <span className={styles.ownerTitle}>Owner: </span>
+        <span>{owner}</span>
+      </div>
+      <div className={styles.stars}>
+        <span className={styles.starsTitle}>Stars: </span>
+        <span>{pkg.stars}</span>
+        </div>
     </div>
   );
 }
