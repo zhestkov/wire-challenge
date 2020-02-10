@@ -52,7 +52,6 @@ export default class Pagination extends React.Component<TPaginationProps, TPagin
   };
 
   setPage = (page: number) => {
-    console.log(page);
     const { currentPage, totalPages, onChangePage } = this.props;
     if (page !== currentPage && page > 0 && page <= totalPages) {
       onChangePage(page);

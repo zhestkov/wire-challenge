@@ -33,12 +33,10 @@ export default class Dropdown extends React.Component<TDropdownProps, TDropdownS
   };
 
   closeDropdown = () => {
-    console.log('close');
     this.setState({ isActive: false });
   };
 
   toggleDropdown = () => {
-    console.log('toggle');
     const { isActive } = this.state;
     this.setState({ isActive: !isActive });
   };
@@ -56,7 +54,6 @@ export default class Dropdown extends React.Component<TDropdownProps, TDropdownS
   };
 
   handleItemClick = (item: IDropdownItem) => {
-    console.log('itemClick');
     const { onSelect } = this.props;
     onSelect(item);
     this.closeDropdown();
