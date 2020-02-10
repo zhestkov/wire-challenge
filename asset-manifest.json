@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/wire-challenge/static/css/main.6fdc40af.chunk.css",
-    "main.js": "/wire-challenge/static/js/main.242560d1.chunk.js",
-    "main.js.map": "/wire-challenge/static/js/main.242560d1.chunk.js.map",
+    "main.js": "/wire-challenge/static/js/main.b314b10d.chunk.js",
+    "main.js.map": "/wire-challenge/static/js/main.b314b10d.chunk.js.map",
     "runtime-main.js": "/wire-challenge/static/js/runtime-main.c9d37aff.js",
     "runtime-main.js.map": "/wire-challenge/static/js/runtime-main.c9d37aff.js.map",
-    "static/js/2.4da2fe45.chunk.js": "/wire-challenge/static/js/2.4da2fe45.chunk.js",
-    "static/js/2.4da2fe45.chunk.js.map": "/wire-challenge/static/js/2.4da2fe45.chunk.js.map",
+    "static/js/2.0145d217.chunk.js": "/wire-challenge/static/js/2.0145d217.chunk.js",
+    "static/js/2.0145d217.chunk.js.map": "/wire-challenge/static/js/2.0145d217.chunk.js.map",
     "index.html": "/wire-challenge/index.html",
-    "precache-manifest.df0373d0f460402fad99bc2a916016fb.js": "/wire-challenge/precache-manifest.df0373d0f460402fad99bc2a916016fb.js",
+    "precache-manifest.e0c96c05ac2b5b2407eb6671a6aeec6a.js": "/wire-challenge/precache-manifest.e0c96c05ac2b5b2407eb6671a6aeec6a.js",
     "service-worker.js": "/wire-challenge/service-worker.js",
     "static/css/main.6fdc40af.chunk.css.map": "/wire-challenge/static/css/main.6fdc40af.chunk.css.map",
-    "static/js/2.4da2fe45.chunk.js.LICENSE": "/wire-challenge/static/js/2.4da2fe45.chunk.js.LICENSE",
+    "static/js/2.0145d217.chunk.js.LICENSE": "/wire-challenge/static/js/2.0145d217.chunk.js.LICENSE",
     "static/media/arrow_down.64796673.svg": "/wire-challenge/static/media/arrow_down.64796673.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.c9d37aff.js",
-    "static/js/2.4da2fe45.chunk.js",
+    "static/js/2.0145d217.chunk.js",
     "static/css/main.6fdc40af.chunk.css",
-    "static/js/main.242560d1.chunk.js"
+    "static/js/main.b314b10d.chunk.js"
   ]
 }
