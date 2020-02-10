@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/wire-challenge/precache-manifest.7e020594cbaa748ac18afc8ca5cd424d.js"
+  "/wire-challenge/precache-manifest.f3dd1ed814ba4e5ac16603370df7d4e5.js"
 );
 
 self.addEventListener('message', (event) => {

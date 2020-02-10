@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/wire-challenge/static/css/main.e2f3f1a4.chunk.css",
-    "main.js": "/wire-challenge/static/js/main.30414dee.chunk.js",
-    "main.js.map": "/wire-challenge/static/js/main.30414dee.chunk.js.map",
+    "main.js": "/wire-challenge/static/js/main.5631dda3.chunk.js",
+    "main.js.map": "/wire-challenge/static/js/main.5631dda3.chunk.js.map",
     "runtime-main.js": "/wire-challenge/static/js/runtime-main.c9d37aff.js",
     "runtime-main.js.map": "/wire-challenge/static/js/runtime-main.c9d37aff.js.map",
     "static/js/2.f6574977.chunk.js": "/wire-challenge/static/js/2.f6574977.chunk.js",
     "static/js/2.f6574977.chunk.js.map": "/wire-challenge/static/js/2.f6574977.chunk.js.map",
     "index.html": "/wire-challenge/index.html",
-    "precache-manifest.7e020594cbaa748ac18afc8ca5cd424d.js": "/wire-challenge/precache-manifest.7e020594cbaa748ac18afc8ca5cd424d.js",
+    "precache-manifest.f3dd1ed814ba4e5ac16603370df7d4e5.js": "/wire-challenge/precache-manifest.f3dd1ed814ba4e5ac16603370df7d4e5.js",
     "service-worker.js": "/wire-challenge/service-worker.js",
     "static/css/main.e2f3f1a4.chunk.css.map": "/wire-challenge/static/css/main.e2f3f1a4.chunk.css.map",
     "static/js/2.f6574977.chunk.js.LICENSE": "/wire-challenge/static/js/2.f6574977.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.c9d37aff.js",
     "static/js/2.f6574977.chunk.js",
     "static/css/main.e2f3f1a4.chunk.css",
-    "static/js/main.30414dee.chunk.js"
+    "static/js/main.5631dda3.chunk.js"
   ]
 }
