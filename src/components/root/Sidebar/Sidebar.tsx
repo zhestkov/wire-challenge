@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './sidebar.module.scss';
-import Routes, {IRoute, RoutesEnum} from '../../../Router';
+import Routes, { IRoute } from '../../../Router';
 import { NavLink } from 'react-router-dom';
 import styles from './sidebar.module.scss';
 
@@ -10,13 +10,11 @@ interface ISidebarProps {
 
 interface ISidebarState {
   opened: boolean;
-  selected: string;
 }
 
 export default class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
   state: ISidebarState = {
-    opened: true,
-    selected: RoutesEnum.HOME_PAGE
+    opened: true
   };
 
   render() {

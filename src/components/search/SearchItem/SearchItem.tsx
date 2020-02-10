@@ -3,6 +3,7 @@ import { IPackage } from '../../../shared/interfaces/IPackage';
 import styles from './search-item.module.scss';
 
 interface ISearchItemProps {
+  className?: string;
   pkg: IPackage;
   children?: React.ReactNode;
 }
@@ -11,7 +12,8 @@ interface ISearchItemProps {
 const REGEXP_OWNER = /(?<=github.com\/).*\//;
 
 export default function SearchItem({ pkg }: ISearchItemProps) {
-  let owner = pkg.repository_url.match(REGEXP_OWNER)![0];
+  const matchOwner = (pkg.repository_url && pkg.repository_url.match(REGEXP_OWNER)) || null;
+  let owner = (matchOwner && matchOwner[0]) || '';
   if (owner) {
     owner = owner.slice(0, -1);
   }

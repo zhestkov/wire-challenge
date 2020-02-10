@@ -97,11 +97,11 @@ export const  fetchPackages =
 
     dispatch(setPackages(res.data));
     dispatch(setLoading(false));
-
-    console.log(getState().search);
+    return await Promise.resolve(res.data);
   } catch(err) {
     console.error(err);
     dispatch(setError(err));
+    return await Promise.resolve(null);
   }
 };
 

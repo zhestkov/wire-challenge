@@ -41,6 +41,14 @@ $search-filters-width: 140px;
     }
   }
 
+  .loadingLabel {
+
+  }
+
+  .noPackagesLabel {
+
+  }
+
   .resultsWrapper {
     .resultsHeader {
       display: flex;
@@ -64,6 +72,10 @@ $search-filters-width: 140px;
       @media ($tablet-mq) {
         display: none;
       }
+    }
+
+    .searchItemWrapper {
+
     }
   }
 

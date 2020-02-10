@@ -7,7 +7,7 @@ export const RouteWithProps = (route: IRoute) => {
     <Route
       path={route.path}
       exact={route.exact}
-      component={route.component}
+      component={route.component as any} // TODO remove any
     />
   )
 };

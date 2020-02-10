@@ -12,7 +12,7 @@ export interface IRoute {
   exact?: boolean;
   name: string;
   label: string;
-  component: React.ReactNode | any; // TODO: remove any
+  component: React.ReactNode;
   routes?: IRoute[];
 }
 

@@ -3,7 +3,7 @@ import styles from './footer.module.scss'
 
 
 interface IFooterProps {
-  label?: string;
+  label: string;
 }
 
 export default function Footer({ label }: IFooterProps) {
