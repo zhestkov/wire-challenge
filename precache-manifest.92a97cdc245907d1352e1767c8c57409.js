@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1eb89ee1860b62e6fdf8ae32f96e56bc",
+    "revision": "64355c0e227710c75890062f368a9dbb",
     "url": "/wire-challenge/index.html"
   },
   {
-    "revision": "245f8f11d5f22fcc0f10",
+    "revision": "0a54e7c543131cfa73a4",
     "url": "/wire-challenge/static/css/main.6fdc40af.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wire-challenge/static/js/2.a0c689ac.chunk.js.LICENSE"
   },
   {
-    "revision": "245f8f11d5f22fcc0f10",
-    "url": "/wire-challenge/static/js/main.4e39d342.chunk.js"
+    "revision": "0a54e7c543131cfa73a4",
+    "url": "/wire-challenge/static/js/main.7c5b2a70.chunk.js"
   },
   {
     "revision": "fd02528b81672cf0bc51",
