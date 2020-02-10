@@ -9,14 +9,11 @@ interface ISearchItemProps {
 }
 
 // TODO: move to utils?
-const REGEXP_OWNER = /(?<=github.com\/).*\//;
+const REGEXP_OWNER = /^http[s]?:\/\/.*?\/([a-zA-Z-_]+).*$/;
 
 export default function SearchItem({ pkg }: ISearchItemProps) {
-  const matchOwner = (pkg.repository_url && pkg.repository_url.match(REGEXP_OWNER)) || null;
-  let owner = (matchOwner && matchOwner[0]) || '';
-  if (owner) {
-    owner = owner.slice(0, -1);
-  }
+  let ownerMatch = pkg.repository_url.match(REGEXP_OWNER);
+  const owner = (ownerMatch && ownerMatch[1]) || pkg.repository_url;
   return (
     <div className={styles.searchItem}>
       <div className={styles.metaInfo}>
