@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "64355c0e227710c75890062f368a9dbb",
+    "revision": "469d38ed5627f458a5065043aa7e8148",
     "url": "/wire-challenge/index.html"
   },
   {
-    "revision": "0a54e7c543131cfa73a4",
-    "url": "/wire-challenge/static/css/main.6fdc40af.chunk.css"
+    "revision": "59ef545c588ffdd694ea",
+    "url": "/wire-challenge/static/css/main.e2f3f1a4.chunk.css"
   },
   {
-    "revision": "00b12aad4ba41008eb64",
-    "url": "/wire-challenge/static/js/2.a0c689ac.chunk.js"
+    "revision": "68a4f418ff03ad865c23",
+    "url": "/wire-challenge/static/js/2.f6574977.chunk.js"
   },
   {
     "revision": "86afaa925e0f432774bf95b19b6933fb",
-    "url": "/wire-challenge/static/js/2.a0c689ac.chunk.js.LICENSE"
+    "url": "/wire-challenge/static/js/2.f6574977.chunk.js.LICENSE"
   },
   {
-    "revision": "0a54e7c543131cfa73a4",
-    "url": "/wire-challenge/static/js/main.7c5b2a70.chunk.js"
+    "revision": "59ef545c588ffdd694ea",
+    "url": "/wire-challenge/static/js/main.30414dee.chunk.js"
   },
   {
     "revision": "fd02528b81672cf0bc51",
