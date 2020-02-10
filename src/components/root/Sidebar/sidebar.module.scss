@@ -5,19 +5,19 @@
 $sidebar-width: 220px;
 
 .sidebar {
+  display: none;
   flex: 0 0 $sidebar-width;
-  display: flex;
   flex-direction: column;
   background-color: $blue-10;
 
   @media ($tablet-hq) {
-    display: none;
+    display: flex;
   }
 
   .link {
-    padding: 8px 14px;
-    border: 2px solid $blue-10;
-    border-radius: 4px;
+    padding: $building-unit-x2 $building-unit-x3;
+    border: $building-unit / 2 solid $blue-10;
+    border-radius: $border-radius-tiny;
     text-decoration: none;
     color: $blue-70;
     font-weight: bold;

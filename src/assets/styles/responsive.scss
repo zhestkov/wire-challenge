@@ -1,11 +1,6 @@
 //media queries
-//$mobile-mq: 'max-width: 767px';
-//$tablet-mq: 'max-width: 1023px';
-//$desktop-mq: 'max-width: 1215px';
-//$wide-desktop-mq: 'max-width: 1499px';
-//$large-desktop-mq: 'max-width: 1799px';
-$mobile-mq: 'max-width: 520px';
-$tablet-mq: 'max-width: 767px';
-$tablet-hq: 'max-width: 992px';
-$desktop-mq: 'max-width: 1215px';
-$wide-desktop-mq: 'max-width: 1499px';
+$mobile-mq: 'min-width: 520px';
+$tablet-mq: 'min-width: 767px';
+$tablet-hq: 'min-width: 992px';
+$desktop-mq: 'min-width: 1215px';
+$wide-desktop-mq: 'min-width: 1499px';
