@@ -3,8 +3,9 @@ import {SORT_ITEM_OWNER, SORT_ITEM_PACKAGE_NAME, SORT_ITEM_STARS} from '../../..
 import {IPackage} from '../../../shared/interfaces/IPackage';
 import {TRootState} from '../index';
 
-const getPackages = (state: TRootState) => state.search.packages;
-const getFilter = (state: TRootState) => state.search.filter;
+export const getPackages = (state: TRootState) => state.search.packages;
+export const getFilter = (state: TRootState) => state.search.filter;
+export const getIsLoading = (state: TRootState) => state.loading.isLoading;
 
 
 export const getFilteredPackages = createSelector(

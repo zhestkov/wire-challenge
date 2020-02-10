@@ -9,13 +9,13 @@ import { IPackage } from '../../shared/interfaces/IPackage';
 import { TRootState } from '../../store/modules';
 import { fetchPackages, ISearchActionTypes, ISearchFilter, setFilter } from '../../store/modules/search';
 import Util from '../../shared/utils/Util';
-import getFilteredPackages from '../../store/modules/search/selectors';
+import getFilteredPackages, { getFilter, getIsLoading } from '../../store/modules/search/selectors';
 import { SORT_ITEMS } from '../../shared/interfaces/ISort';
 import styles from './search-view.module.scss';
 
 const mapStateToProps = (state: TRootState) => ({
-  filter: state.search.filter,
-  isLoading: state.loading.isLoading,
+  isLoading: getIsLoading(state),
+  filter: getFilter(state),
   filteredPackages: getFilteredPackages(state)
 });
 
